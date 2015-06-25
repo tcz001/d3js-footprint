@@ -35,7 +35,7 @@
 
       var cities = map.append("svg:g").attr("id", "cities");
 
-      d3.json("data/china_cities.json", function (json) {
+      d3.json("china_cities.json", function (json) {
       cities.selectAll("path")
       .data(json.features)
       .enter().append("svg:path")
@@ -43,17 +43,6 @@
       .on("mouseover", mouseover)
       .on("mouseout", mouseout);
       });
-
-      <!-- var china = map.append("svg:g").attr("id", "country"); -->
-
-      <!-- d3.json("data/china.json", function (json) { -->
-      <!-- china.selectAll("path") -->
-      <!-- .data(json.features) -->
-      <!-- .enter().append("svg:path") -->
-      <!-- .attr("d", path); -->
-      <!-- <\!-- .on("mouseover", mouseover) -\-> -->
-      <!-- <\!-- .on("mouseout", mouseout); -\-> -->
-      <!-- }); -->
 
       function mouseover(d,i) {
       d3.select(this).classed("active", true);
